@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr[] = "123";
+	char ch[] = { '1','2','3','\0'};
+	printf("%s\n", arr);
+	printf("%s\n", ch);
+
+	
+	return 0;
+}
+© 2021 GitHub, Inc.
