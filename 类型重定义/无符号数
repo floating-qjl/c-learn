@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	typedef unsigned int u_int;//typedef为类型重定义
+	int a = 0;
+	u_int b = 20;
+	unsigned int c = -20;
+	printf("a=%d b=%u c=%u\n", a, b, c);
+	//unsigned--表示无符号数
+
+
+	return 0;
+}
