@@ -3,6 +3,7 @@
 void test()
 {
 	static int a = 1;//此时a为静态局部变量
+	//static--修饰局部变量，延长局部变量生命周期
 	a++;
 	printf("a=%d\n", a);//2 3 4 5 6
 
