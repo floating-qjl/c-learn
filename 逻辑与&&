@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 3;
+	int c = 4;
+	int d = 0;
+	int sum1 = a && b;
+	int sum2 = b && c;
+	int sum3 = a && d;
+	printf("真假为%d %d %d\n", sum1, sum2, sum3);
+	
+	return 0;
