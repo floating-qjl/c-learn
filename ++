@@ -1,0 +1,11 @@
+##include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a1 = 100;
+	int a2 = 100;
+	int b1 = a1++;//后置++，先使用，再++
+	int b2 = ++a2;//前置++，先++，再使用
+	printf("a1=%d\n a2=%d\n b1=%d\n b2=%d\n", a1, a2, b1, b2);// 101 101 100 101
+	return 0;
+}
