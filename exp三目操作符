@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 3;
+	int max = 0;
+	max = (a > b ? a : b);
+	printf("max=%d\n", max);
+	//exp1?exp2:exp3类型，若exp1为真，则输出exp2，否则输出exp3
+	
+	return 0;
