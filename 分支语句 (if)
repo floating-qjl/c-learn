@@ -6,6 +6,7 @@ int main()
 	printf("您的san值为:");
 	scanf("%d", &san);
 	if (100 == san)
+	//=为赋值    ==为等于
 		printf("正常");
 	else if (san >= 60 && san < 100)
 		printf("紊乱");
