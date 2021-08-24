@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int 种族=0;
+	printf("您的种族为(输入数字)\n");
+	int a=0;
+	scanf("%d", &种族);
+	
+	switch (种族)
+	{
+	case 0:
+	case 1:
+		printf("人族\n");
+		break;
+	case 2:
+	case 3:
+		printf("魔族\n");
+		break;
+	case 4:
+	case 5:
+		printf("精灵族\n");
+		break;
+	case 6:
+		switch(a)
+			//switch 可以嵌套
+		{
+		case 0:a++;
+			if (a = 1)
+				printf("未知种族\n");
+			break;
+		}
+		break;
+	default:
+		printf("兽族\n");
+	}
+	return 0;
+}
