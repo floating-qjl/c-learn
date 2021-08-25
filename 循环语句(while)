@@ -8,6 +8,7 @@ int main()
 		a++;
 		if(a==5)
 		continue;
+		//continue--结束当前循环，并从判断开始下一循环
 		printf("%d\n", a);
 	}
 	while (a >=10)
@@ -16,6 +17,7 @@ int main()
 		printf("%d\n", a);
 		if (a ==20)
 			break;
+			//braek--结束循环
 	}	
 	return 0;
 }
