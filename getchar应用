@@ -13,6 +13,7 @@ int main()
 		//换行ascll值为10
 		//循环使得清楚缓冲区（123456\n)
 	{
+	;
     }
 	printf("是否确认:>(Y/N)");
 	ret = getchar();
