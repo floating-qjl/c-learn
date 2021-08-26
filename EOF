@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar())!= EOF)
+		//EOF--end of file 文件结束标志
+	{
+	     putchar(ch);
+		 printf("233\n");
+	}
+
+	return 0;
+}
