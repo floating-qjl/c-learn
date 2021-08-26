@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int san = 0;
+	for (san = 100;san >= 0;san--)
+		//初始化    条件   调整
+	{
+		if (san >= 60)
+		{
+			printf("正常\n");
+			continue;
+			//continue--跳过以下代码，进行调整，与while中不同
+		}
+		else if (san > 0 && san < 60)
+		{
+			printf("疯狂\n");
+			continue;
+		}
+		else
+		{
+			printf("死亡\n");			
+		}
+		printf("游戏结束\n");
+		break;
+		//break--结束循环并跳出
+	}
+	return 0;
+}
