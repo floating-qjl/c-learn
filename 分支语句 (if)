@@ -17,6 +17,7 @@ int main()
 				printf("疯狂");
 			else
 				printf("死亡");
+				//else与最近的if搭配
 	}
 	return 0;
 }
