@@ -4,7 +4,8 @@ int main()
 {
 	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
 	int i = 0;
-	int k = 8;
+	int k = 0;
+	scanf("%d", &k);
 	int a = sizeof(arr) / sizeof(arr[0]);
 	for (i = 0;i < a;i++)
 	{
@@ -18,3 +19,4 @@ int main()
 		printf("warning，系统即将崩溃\n");
 	return 0;
 }
+
