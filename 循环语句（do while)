@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf("%d%d", &a, &b);
+	if (a < 5 && b < 5)
+	{
+		do
+		{
+			if (a <= 2)
+			{
+				a++, b++;
+				printf("%d %d\n", a, b);
+			}
+			else
+			{
+				printf("错误\n");
+				break;
+				//break跳出循环
+			}
+		}
+		while (a < 5);
+	}
+	else if (a >= 5)
+	{
+		b++;
+		do
+		{
+			if (b < 10)
+			{
+				a++;
+				printf(" %d%d", a,b);
+			}
+			a++;
+			if (a == 7)
+			{
+				continue;
+				//continue--跳过以下循环，进行条件判断
+				a++;
+			}
+			else
+				a++, b++;
+		} while (a <= 10);
+	}
+		return 0;
+}
