@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 void test()
+//void--无需返回值
 {
 	static int a = 1;//此时a为静态局部变量
 	//static--修饰局部变量，延长局部变量生命周期
@@ -8,20 +9,15 @@ void test()
 	//static--修饰函数，改变了函数的链接属性（相当于改变了函数的作用范围）
 	a++;
 	printf("a=%d\n", a);//2 3 4 5 6
-
-
 }
 int main()
 {
 	int b = 0;
 	while (b < 5)
-	{
-	
+	{	
 	test();
 	b++;
 	printf("b=%d\n", b);
 }
-
-
 	return 0;
 }
