@@ -8,4 +8,5 @@ int main()
 	//memory--内存   set--设置
 	//memset-更改存储的地址，存进去的为ascll值
 	printf("%s\n", arr1);	
+	return 0;
 }
