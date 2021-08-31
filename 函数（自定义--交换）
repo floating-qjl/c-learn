@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 void swap1(int x, int y)
-//x,y为形参
+//x,y为形参,只有在调用过程中实例化，调用后自动销毁
 {
 	int c = 0;
 	c = x;
@@ -22,6 +22,7 @@ int main()
 	int b = 10;	
 	printf("a=%d b=%d\n", a, b);
 	swap1(a, b);
+	//a,b为实参，可为变量，常量，表达式，函数等
 	printf("a=%d b=%d\n", a, b);
 	swap2(&a, &b);
 	printf("a=%d b=%d\n", a, b);
