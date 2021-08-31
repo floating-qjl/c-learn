@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char arr1[] = "san";
+	char arr2[5] = "#####";
+	strcpy(arr2, arr1);
+	printf("%s\n", arr2);
+	printf("%d\n", strlen(arr2));
+}
