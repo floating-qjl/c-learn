@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int Add(int x, int y);
+//函数声明，先声明后使用
+//一般放于  .h   源文件中
+int main()
+{
+	int a = 0;
+	int b = 30;
+	Add(a, b);
+	printf("%d\n", a + b);
+	return 0;
+}
+int Add(int x, int y)
+{
+	int c = x + y;
+	return c;
+	//(return x+y);
+}
+//函数定义
+//一般放于  .c    源文件中
