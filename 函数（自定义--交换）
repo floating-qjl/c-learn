@@ -24,8 +24,10 @@ int main()
 	printf("a=%d b=%d\n", a, b);
 	swap1(a, b);
 	//a,b为实参，可为变量，常量，表达式，函数等
+	//传值调用
 	printf("a=%d b=%d\n", a, b);
 	swap2(&a, &b);
+	//传址调用
 	printf("a=%d b=%d\n", a, b);
 	return 0;
 }
