@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	printf("%d\n",printf("%d\n", printf("%d\n", 43)));//答案为4321
+	//printf打印（内部函数打印完后）的返回值
+	//printf返回值为打印的字符个数
+	return 0;
+}
