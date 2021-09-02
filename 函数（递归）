@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//函数递归--自己调用自己，大事化小
+//递归常见错误--栈溢出
+//栈区--局部变量，函数形参；
+//堆区--动态开辟的内存，malloc，calloc；
+//静态区--全局变量，static修饰的变量；
+//函数调用基本都在栈区调取内存，数量多了则会造成栈溢出
+int main()
+{
+	printf("hehe\n");
+	main();
+	return 0;
+}
+//最简单的递归
