@@ -1,8 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
+//#ifndef __ADD_H__
+//#define __ADD_H__
 int Add(int x, int y);
 //函数声明，先声明后使用
 //一般放于  .h   源文件中
+//#endif
 int main()
 {
 	int a = 0;
