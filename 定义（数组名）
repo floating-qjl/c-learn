@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7 };
+	printf("%p\n", arr);
+	printf("%p\n", &arr[0]);
+	printf("%d\n", *arr);	
+	//都表示数组内的首元素的相关数据
+ 	printf("%p\n", &arr);
+    //表示整个数组的地址，都从首元素开始，所以与上方显示相同，但意义不同--若在打印的后方+1，则值不同
+
+	//数组名一般代表首元素地址
+	//但有两个例外：1.sizeof（arr）--求整个数组元素个数，即arr表示整个数组
+	//              2.取地址数组名（&arr）--取出的是整个数组的地址，即arr代表整个数组
+	return 0;
+}
