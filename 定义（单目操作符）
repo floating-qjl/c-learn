@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	//逻辑反操作符
+	if (a)
+	//表示a为真
+	{
+		printf("hehe\n");
+	}
+	if (!a)
+	//表示a为假	
+	{
+		printf("hehe1\n");
+	}
+	int* p = &a;
+	//&--取地址操作符
+	//*--解引用操作符
+	int arr[10] = { 0 };
+	printf("%d\n", sizeof(int[10]));
+	//sizeof--求取变量所占内存空间的大小，单位是字节
+	return 0;
+}
