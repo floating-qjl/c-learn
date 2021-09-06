@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	//算术操作符
+	int a = 5 / 2;//答案为商2
+	int b = 5 % 2;//答案为余数1
+	double c = 5 / 2.0;//答案为2.5
+	//double类型不能使用%
+	return 0;
+}
