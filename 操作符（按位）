@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	//& -- 按二进制位与
+	int a = 3;
+	int b = 5;
+	int c = a & b;
+	//011 & 101 = 001
+	// 即全1则1
+	//|--按二进制或
+	int d = a | b;
+	//011 | 101 = 111
+	// 即有1则1
+	//按二进制异或
+	int e = a^b;
+	//011 ^ 101 = 110
+	// 即相同为0，相异为1
+	printf("%d", e);
+	return 0;
+}
