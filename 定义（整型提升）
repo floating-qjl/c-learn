@@ -19,7 +19,8 @@ int main()
 	char d = 1;
 	printf("%u\n", sizeof(d));//1
 	printf("%u\n", sizeof(+d));//4
-	//经行了运算，发生整型提升
+	//进行了运算，发生整型提升
+	//表达式中各种可能小于int长度的整型值，都必须先转化成int或unsigned int，然后才能送入CPU进行运算
 	printf("%u\n", sizeof(!d));//1
 	return 0;
 }
