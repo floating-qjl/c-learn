@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 1;
+	int b = 2;
+	int c = (a > b, a = b + 10, a, b = a + 1);//逗号表达式
+	//从左向右依次计算，输出结果为最后一个式子的答案
+	printf("%d\n", c);
+	return 0;
+}
