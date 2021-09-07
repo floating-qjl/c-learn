@@ -6,9 +6,11 @@ int main()
 	int b = 3;
 	int c = 4;
 	int d = 0;
+	//&&--逻辑与，全真为真
 	int sum1 = a && b;
 	int sum2 = b && c;
 	int sum3 = a && d;
 	printf("真假为%d %d %d\n", sum1, sum2, sum3);
-	
+	//||--逻辑或，有真为真
+	int sum4 = a || b;
 	return 0;
