@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	//类型转换优先级：long double
+	//                double
+	//	              float
+	//	              unsigned long int
+	//	              long int
+	//	              unsigned int
+	//	              int
+	int a = 0;
+	int b = 1;
+	int c = 5;
+	int d = a + b + c;
+	//结合性---  +号  ---从左向右进行运算
+	//&&  ,||  , exp( ? : )条件操作符 , 逗号表达式    ----控制求值顺序
+	//问题式子：a*b+c*d+e*f
+	//此式子可以先算*再算+
+	//也可以先算前两个*再算第一个+，然后算第三个*，最后算第二个+
+	//路径不一样，结果就可能不一样，所以式子错误
+	return 0;
+}
