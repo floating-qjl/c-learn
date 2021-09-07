@@ -20,5 +20,11 @@ int main()
 	int arr[10] = { 0 };
 	printf("%d\n", sizeof(int[10]));
 	//sizeof--求取变量所占内存空间的大小，单位是字节
+	short s = 0;
+	int k = 10;
+	printf("%d\n", sizeof(s = k + 5));
+	//sizeof里的表达式不直接运算，此处打印的大小为最终结果a的大小
+	printf("%d", s);
+	//此处结果为0
 	return 0;
 }
