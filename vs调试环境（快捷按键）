@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	for (a = 0;a < 100;a++)
+	{
+		printf("%d ", a);
+	}
+	printf("\n");
+	for (a = 0;a < 100;a++)
+	{
+		printf("%d ", 10 - a);
+		//F10 - 逐过程，使代码一步一步走
+		//F11 - 逐语句，可以进入到函数内部
+		//SHITF+F11 - 可以快速跳出函数内部
+		//F9 - 断点操作，使代码停在F9处
+		//F5 - 调试按键，配合F9使用，可以停在F9处，并进行逐步操作进行调试
+		//SHITF+F5 - 停止调试
+		//CTRL+F5 - 开始执行不调式
+	}
+	return 0;
+}
