@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <assert.h>
+int main()
+{
+	const int num = 10;
+    int* p = &num;
+	*p = 20;
+	//若只在num最前面加上const的话，*p与之相对，破坏了规则
+	//因此可以在int* p前面加上const
+	//const放在指针变量的*左边时，修饰的是*p，即不能通过p来改变*p（num）的值，但未限制p
+	//而若const放在指针变量*的右边时，如int* const p，则修饰的是指针变量本身p，既不能改变p所指向的地址，而*p可以改变
+	printf("%d\n", num);
+}
