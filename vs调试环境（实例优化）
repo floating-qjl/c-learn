@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int a = 0;
+	//使得a的地址在下方，避免死循环导致不报错 ---- Debug版本
+	//自动优化，使得a的地址在下方 ---- Release版本
+	for (a = 0;a < 10;a++)
+	{
+		printf("hehe\n");
+		arr[a] = 0;
+	}	
+	return 0;
+}
