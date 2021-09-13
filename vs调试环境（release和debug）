@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int a = 0;
+	for (a = 0;a < 12;a++)
+	{
+		printf("hehe\n");
+		arr[a] = 0;
+	}
+	//此程序越界，若在debug程序员环境下则报错
+	//而若在release环境下则正常运行，因为release对代码功能等进行了优化
+	return 0;
+}
