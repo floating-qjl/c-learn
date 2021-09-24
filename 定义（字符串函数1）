@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	//字符串长度strlen
+	int len = strlen("abcdef");
+	char arr[] = { 'a','b','c','d','e','f' };
+	int len2 = strlen(arr);
+	//strlen遇到\0会停下来，读取\0之前的字符个数，如果没有\0就会输出随机值
+	if (strlen("abcd") - strlen("abcdefg") > 0)
+		printf("hehe\n");
+	//strlen 返回类型为size_t，即为unsigned int
+	//此处无符号数减去无符号数依然是无符号数
+	else
+		printf("haha\n");
+
+
+	//字符串拷贝strcpy
+	char a[] = "abcdefg";
+	char b[] = "abc";
+	strcpy(a, b);
+	printf("%s\n", a);
+	//字符串拷贝，可将字符串连同\0一起拷贝到另一个字符串上，返回类型为char*
+	//注意：被拷贝的字符串必须包含\0；目标空间必须可变；目标空间有足够空间包含\0，以免越界
+	//                     避免拷贝常量字符串
+
+
+	//字符串追加strcat
+	char arr1[30] = "hello";
+	char arr2[] = "world";
+	strcat(arr1, arr2);
+	printf("%s\n", arr1);
+	//注意：源字符串必须以'\0'结束；目标空间必须有足够大的空间；目标空间必须可修改；目标空间也要有'\0'
+	//此库函数若自己给自己追加，则会程序崩溃 
+	return 0;
+}
