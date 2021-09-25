@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+int main()
+{
+	//字符串比较 strcmp
+	char* p1 = "abcdefg";
+	char* p2 = "hhhhhh";
+	int ret = strcmp(p1, p2);
+	//strcmp - 若p1>p2则返回值大于0，p1<p2则返回值小于0，p1=p2则返回值为0
+	//比较规则为：对应首个字符进行比较，如a与h比较，若相等则比较对应的后一位
+	printf("%d\n", ret);
+
+
+	//限制性字符串拷贝 strncpy
+	char arr1[10] = "abcdefg";
+	char arr2[] = "bit";
+	strncpy(arr1, arr2, 6);
+	//如果源字符串（arr2）长度小于拷贝的长度（即此处的6），则余下部分添补\0，直到拷贝完所需的长度
+
+
+	//限制性字符串追加 strncat
+	char arr3[30] = "hello";
+	char arr4[] = "world";
+	strncat(arr3, arr4, 5);
+	//追加长度个（3）字符，并且为保证arr3依旧为字符串，在追加完字符串后自动补一个\0
+	//前提为arr3有足够空间
+	//而若追加长度大于arr4，，并不需要向strncpy一样将剩下部分全部添补为\0
+	printf("%s\n", arr3);
+
+
+    //限制性字符串比较 strncmp
+	const char* p3 = "abcdef";
+	char* p4 = "abcqwer";
+	int ret1 = strncmp(p3, p4, 4);
+	//比较相对应的前长度个（4）字符 ，大于返回大于0的数字
+	printf("%d\n", ret1);
+
+
+	//查找字符串 strstr
+	char* p5 = "abcdefghi";
+	char* p6 = "def";
+	char* ret2 = strstr(p5, p6);
+	//若在p5里面没有p6则返回空指针，若存在，则会返回d的地址
+	if (ret == NULL)
+		printf("字符串不存在\n");
+	else
+		printf("%s\n", ret2);
+	//ret得到d的地址并向后读取字符串
+	
+	return 0;
+}
