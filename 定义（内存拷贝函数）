@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+struct stu
+{
+	char name[20];
+	int age;
+};
+int main()
+{ 
+	//内存拷贝函数 memcpy
+	int arr1[] = { 1,2,3,4,5 };
+	int arr2[5] = { 0 };
+	struct stu arr3[] = { {"张三",20},{"李四",39}};
+	struct stu arr4[3] = { 0 };
+	memcpy(arr2, arr1, sizeof(arr1));
+	memcpy(arr4, arr3, sizeof(arr3));
+	//类型 void*/const void*/int
+	//如果用strcpy进行拷贝则只会拷贝第一个字节即为1，到第二个字节会识别到\0(00)停止
+	//因此strcpy只适合拷贝字符串
+
+	return 0;
+}
