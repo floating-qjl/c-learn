@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+int main()
+{ 
+	// 字符转换函数 tolower 和 toupper
+	//         大写转换为小写 小写转换为大写
+	char ch = tolower('Q');
+	putchar(ch);
+	char ch2 = toupper('q');
+	putchar(ch2);
+	
+	char arr[] = "I Am Student";
+	int a = 0;
+	while (arr[a])
+	{
+		if (isupper(arr[a]))
+		{
+			arr[a] = tolower(arr[a]);
+		}
+		a++;
+	}
+	printf("\n%s", arr);
+	return 0;
+}
