@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+int main()
+{ 
+	//字符串分割 strtok
+	//192.188.2.1
+	//192 168 2 1 - 分割后
+	char a[] = "awd@wafnfwi.com";
+	char* p = "@.";
+	//char* strtok(char* str,char* sep)
+	//str为要分割的字符串，sep为分隔符号标记
+	//strtok找到str中的一个标记，然后将其改为‘\0’，并返回指向这个标记的指针
+	//注意：strtok函数会改变被操作的字符串
+	//所以在使用strtok函数切分的字符串一般都是临时拷贝的内容，并且可以修改
+	//strtok函数的第一个参数不为NULL，函数将找到str中的一个标记，strtok函数将保存它在字符串中的位置
+	//strtok函数的第一个参数为NULL，函数将在同一个字符串中保存的位置开始，查找下一个标记
+	//如果字符串中不存在更多的标记，则返回NULL指针
+	char arr[1024] = { 0 };
+	strcpy(arr, a);
+	char* ret = NULL;
+	for (ret = strtok(a, p);ret != NULL;ret = strtok(NULL, p))
+	{
+		printf("%s ", ret);
+	}
+	printf("\n");
+
+
+	//错误信息函数 strerror
+	//错误码  错误信息
+	//0 -     NO error
+	//1 -     Operation not permitted
+	//2 -     No such file or directory
+	//......
+	//errno 是一个全局的错误码的变量
+	//当c语言的库函数在执行过程中，发生了错误，就hi把对应的错误码，赋值到errno中
+
+	//打开文件
+	FILE* pf = fopen("test.txt", "r");
+	//表示打开test.txt这个文件，并且以read的形式
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	else
+		printf("success");
+
+	return 0;
+}
