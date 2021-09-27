@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+int main()
+{
+	int arr1[] = { 1,2,3,4,5 };
+	int arr2[] = { 1,2,5,4,3 };
+	int ret = memcmp(arr1, arr2, 8);
+	//小端存储模式，从第九个字节开始，结果就开始改变
+	//memcmp 返回类型为int，参数类型为 const void*, const void*, size_t
+	if (ret == 0)
+		printf("等于\n");
+	else if (ret > 0)
+		printf("大于\n");
+	else
+		printf("小于\n");
+	return 0;
+}
