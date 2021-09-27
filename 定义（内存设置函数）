@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+int main()
+{
+	char arr[10] = "";
+	memset(arr, '#', 10);
+	//memset 返回类型为void*，参数类型为 void*, int, size_t(字节)
+	int arr2[10] = { 0 };
+	memset(arr2, 1, 10);
+	//相当于改动arr2内存中的的前十个字节（小端模式）
+	return 0;
+}
