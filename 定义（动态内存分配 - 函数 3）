@@ -1,0 +1,54 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+
+//realloc
+//调整动态开辟内存空间的大小
+
+int main()
+{
+	int* p = (int*)malloc(20);
+	if (p == NULL)
+		printf("%s\n", strerror(errno));
+	else
+	{
+		int i = 0;
+		//只是再使用malloc开辟的20个字节空间 
+		//假设这里，20个字节不能满足我们的使用了
+		//希望这里有40个字节的空间
+		//这里就可以使用realloc来调整动态开辟的内存
+		for (i = 0;i < 5;i++)
+		{
+			*(p + i) = i;
+		}		
+	}
+	int* p2 = realloc(p, 40);
+	//返回类型为void* ， 参数类型为void* ，size_t
+	//只想重新开辟的内存块    指针为之前开辟的内存块   开辟的新的大小
+	int i = 0;
+	for (i = 5;i < 10;i++)
+	{
+		*(p2 + i) = i;
+	}
+	for (i = 0;i < 10;i++)
+	{
+		printf("%d ", *(p2 + i));
+	}
+	//realloc使用的注意事项：
+	//开辟空间有两种情况：
+	//1.如果p指向的空间之后仍有足够的内存空间可以追加，则直接追加，后返回p的地址
+	//2.如果p指向的空间之后没有足够的内存空间可以追加，则realloc函数会重新找一块新的内存区域，
+	//开辟一块满足需求的空间，并且把原来内存中的数据拷贝回来，并释放旧的内存空间，
+	//最后返回新的开辟空间的最开始的地址
+	
+	// p = realloc（p，INT_MAX）
+	//3.若此时如上面的代码运行，若无法申请足够的内存空间，则会返回 NULL 指针，并且会将p的地址改变
+	//导致重大错误，因此得用一个新的变量来接受realloc函数的返回值
+
+	free(p);
+	p = NULL;
+	//若为新的地址，此时接收地址的是一个变量，则realloc会自动释放空间
+	return 0;
+}
