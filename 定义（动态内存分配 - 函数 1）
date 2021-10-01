@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+int main()
+{
+	//部分编译器未适配 C99 规定，因此无法创建 变长数组（定义时下标为变量，大小待定）
+	//动态内存函数
+	int* p = (int*)malloc(10 * sizeof(int));//申请10个整形空间（单位是字节，所以可以写成 40）
+	//返回类型 void* ，参数类型为size_t，因此开辟的空间类型需要使用者自己来决定
+	//即返回的是申请的空间的地址,如果空间不足则可能返回失败，即返回空指针
+	//如果参数 size 为0，malloc的行为是标准未定义的，取决于编译器
+	if (p == NULL)
+		printf("%s\n", strerror(errno));
+	//打印错误的原因
+	else
+	{
+		//正常使用内存空间
+		int i = 0;
+		for (i = 0;i < 10;i++)
+		{
+			*(p + i) = i;
+		}
+		for (i = 0;i < 10;i++)
+		{
+			printf("%d ", *(p + i));
+		}
+	}
+	//内存使用完毕后要进行归还
+	free(p);//主动回收
+	//返回类型为void，参数为void*
+	//但是即使归还了空间，p仍能指向这个空间的地址，若操作非法，则可能破坏这层空间
+	//同时，free也可以释放NULL指针，只不过什么都没干
+
+	p = NULL;//防止 p 指向相应的内存空间地址
+
+	return 0;
+	//当返回之后，代码生命周期结束，内存空间也会被归还
+}
