@@ -10,6 +10,9 @@ int main()
 {
 	struct S* ps = (struct S*)malloc(sizeof(struct S));
 	ps->arr = (int*)malloc(5 * sizeof(int));
+	//两次malloc可能使得开辟的空间不连续
+	//局部性原理：当你在空间读取一个值的时候，有%80的概率下一个读取的是附近的值
+	//而若开辟的空间不连续，则会造成效率低下
 	int i = 0;
 	for (i = 0;i < 5;i++)
 	{
