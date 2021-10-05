@@ -1,0 +1,42 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <Windows.h>
+#include <errno.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "w");
+	//此处 w 模式，会创建文件
+	//若改为 r 模式，则需要读文件
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	//成功了，就可以写文件
+	fputc('b', pf);
+	//字符输出函数 - 适用所有输出流
+
+	//读文件
+	//fgetc(pf)  -  字符输入函数 - 适用所有输入流
+	
+	// 返回类型为 int ，参数类型为 FILE*
+	//此处重复三次打印 %c 
+	
+	//返回类型为 int ，参数类型为int ，FILE*
+	fputc('i', pf);
+	fputc('t', pf);
+
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+//键盘和屏幕都是外部设备
+//键盘 - 标准输入设备 - stdin
+//屏幕 - 标准输出设备 - stdout
+//是一个程序默认打开的两个 流设备
+//stdin stdout stderr 都是默认打开的流，返回类型都是FILE*
+
+//int ch = fgetc(stdin);
+//fputc(ch,stdout);
+//可以直接运行
