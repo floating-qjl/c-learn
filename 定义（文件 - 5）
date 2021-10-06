@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <Windows.h>
+#include <errno.h>
+int main()
+{
+	//从键盘读取一行文本信息
+	char arr[1024] = { 0 };
+	fgets(arr, 1024, stdin);//从标准输入流读取
+	fputs(arr, stdout);//输出到标准输出流
+	//gets(arr)
+	//puts(arr)
+	return 0;
+}
