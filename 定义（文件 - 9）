@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+struct S
+{
+	char name[20];
+	int age;
+	double s;
+};
+int main()
+{
+	struct S s = { "张三",20,22.1 };
+	FILE* pf = fopen("test.txt", "wb");
+	// wb 为 二进制 只写
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//二进制形式写文件
+	fwrite(&s, sizeof(struct S), 1, pf);
+	//返回类型为size_t,参数类型为const void*，  size_t，      size_t，        FILE*
+	//                          内容的地址    元素的大小   最多写的元素个数    流
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
