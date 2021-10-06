@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//定位文件指针
+	fseek(pf, -2, SEEK_END);//                          SEEK_CUR       SEEK -END    SEEK_SET
+	//返回类型为 int，参数类型为 FILE*， long int，                   int
+	//                            流      偏移量   （文件指针的当前位置、文件末尾、文件起始）
+	//根据文件指针的位置和偏移量来定位文件指针  -  假设此时文件内容为 abcdef
+	int ch = fgetc(pf);
+	printf("%c\n", ch);
+
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
