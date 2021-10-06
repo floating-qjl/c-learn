@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <Windows.h>
+#include <errno.h>
+struct S
+{
+	int n;
+	float b;
+	char arr[10];
+};
+int main()
+{
+	struct S s = { 0 };
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	//格式化的输入数据(读出数据)  -  适用所有输入流
+	fscanf(pf, "%d %f %s",& (s.n), &(s.b), s.arr);
+	//返回类型为 int ，参数类型为 FILE*，const char*，[,argument]...
+	//遇到回车或者空格就会停止
+
+	printf("%d %lf %s\n", s.n, s.b, s.arr);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
