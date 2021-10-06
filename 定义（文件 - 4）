@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <Windows.h>
+#include <errno.h>
+int main()
+{
+	char arr[1024] = { 0 };
+	FILE* pf = fopen("test.txt", "w");
+	// 'r'为只读
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	//写文件
+	fputs("hello\n", pf);
+	fputs("world\n", pf);
+	//返回类型为 int，参数类型为const char*，FILE*
+	//此处 fputs 不会带有换行符
+
+	//读文件
+	//fgets(arr, 1024, pf);
+	//返回类型为 char*，参数类型为 char*，int，FILE*
+	//                          储存数据  个数  流
+	//printf("%s\n", arr);
+	//fgets一行一行的读取字符，包括换行符
+	//这里可以用 puts 代替 printf，puts会自带一个换行符
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
