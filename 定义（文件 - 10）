@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+struct S
+{
+	char name[20];
+	int age;
+	double s;
+};
+int main()
+{
+	struct S s = { 0 };
+	FILE* pf = fopen("test.txt", "rb");
+	// rb 为 二进制 只读
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//二进制形式读文件
+	fread(&s, sizeof(struct S), 1, pf); 
+	//返回类型为size_t,参数类型为const void*，     size_t，      size_t，         FILE*
+	//                          存放数据的位置    元素的大小   最多写的元素个数    流
+	
+	printf("%s %d %lf\n", s.name, s.age, s.s);
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
