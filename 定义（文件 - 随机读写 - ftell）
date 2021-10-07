@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//定位文件指针
+	fseek(pf, -2, SEEK_END);
+
+	int pos = ftell(pf);
+	//ftell 返回类型为long int，参数类型为FILE*
+	//即返回的是文件指针相对初始位置的偏移量
+
+	printf("%d\n", pos);
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
