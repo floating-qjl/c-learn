@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	int ch = fgetc(pf);
+	printf("%c\n", ch);
+
+	rewind(pf);
+	//返回类型为void，参数类型为FILE*
+	//让文件指针回到文件起始位置
+
+	int a = fgetc(pf);
+	printf("%c\n", a);
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
