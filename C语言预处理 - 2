@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+
+//预定义符号
+int main()
+{
+	printf("%s\n", __FILE__);
+	//此为打印源文件所在的路径
+	printf("%d\n", __LINE__);
+	//打印代码所在的行号
+	printf("%s\n", __DATE__);
+	//打印日期
+	printf("%s\n", __TIME__);
+	//打印时间
+	//printf("%s\n", __STDC__);
+	// STDC 为预定义符号，但在 vs 中未定义，因此会报错
+	// 如果存在 STDC 则意味着完全严格遵循 c语言标准 ，其值为 1 
+
+	//写日志文件
+	int i = 0;
+	int arr[10] = { 0 };
+	FILE* pf = fopen("log.txt", "w");
+	for (i = 0;i < 10;i++)
+	{
+		arr[i] = i;
+		fprintf(pf, "file:%s\nlint:%d\ndate:%s\n", __FILE__, __LINE__, __DATE__);
+	}
+	printf("%s\n", __FUNCTION__);
+	//打印 主函数 名称
+	for (i = 0;i < 10;i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
