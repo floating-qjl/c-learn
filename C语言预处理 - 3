@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+//#define 为定义标识符，是预处理指令(#define ,#include ,#pragma ,#if ,#endif ,#ifdef ,#line )
+
+#define max 100
+//定义 整形数据
+#define str "hehe"
+//定义 字符串
+#define reg register
+//缩短关键字的名称长度（创建一个简短的名字）
+#define do_forever for(;;)
+//创建一个可以 死循环 的名称
+
+int main()
+{
+	int a = max;
+	//在预编译之后 会变成 int a = 100;
+	printf("%d\n", a);
+	printf("%s\n", str);
+
+	do_forever;
+	//如果不加分号就会被 return 0;结束 ，不会死循环
+
+	return 0;
+}
