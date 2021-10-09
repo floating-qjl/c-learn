@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+
+
+#define PRINT(X) printf("the value of "#X" is %d\n" ,X)
+#define CAT(X,Y) X##Y
+int main()
+{
+	//#：把一个宏参数变成对应的字符串
+
+
+	/*printf("hello world\n");
+	printf("hello " "world\n");
+	printf("hel" "lo " "world\n");*/
+	//字符串会自动拼接在一起，因此答案一样
+	int a = 20;
+	int b = 10;
+	PRINT(a);
+	//此处 #X 相当于"a"，因此在 #X 两边加上双引号，使得字符串可以拼接
+	PRINT(b);
+	//这样就完成了将参数插入到字符串中
+
+
+	//##：可以把位于它两边的符号合成一个符号，它允许宏定义从分离的文本片段创建标识符
+
+
+	int alloc = 2010;
+	printf("%d\n", CAT(all, oc));
+	//此处 ## 将 all 和 oc 连成一个符号了 
+	return 0;
+}
