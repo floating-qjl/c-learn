@@ -1,0 +1,61 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+
+//许多C的编译器提供了一种能力，允许在命令行中定义符号，用于启动编译过程
+//例如：当我们根据同一个源文件要编译出不同的一个程序的不同版本的时候，这个特性有点用处
+//可以在 linux 中演示
+
+//条件编译
+//在编译一个程序的时候我们如果将一条语句编译或者放弃是很方便的，因为我们有条件编译指令
+
+int main()
+{
+	int arr[10] = { 0 };
+	int i = 0;
+	for (i = 0;i < 10;i++)
+	{
+		arr[i] = 0;
+#ifdef DEBUG
+		//条件编译 - 满足条件则会编译
+		printf("%d", arr[i]);
+		//此处 debug 未定义，即为假，不会打印 printf （在预编译/预处理的时候这段代码就被跳过了）
+#endif
+	}
+	return 0;
+}
+//常见的条件编译指令
+//1.   #if 常量表达式（真 则会执行，假 则不会参与编译）
+//     #endif
+//     常量表达式由预处理求值
+
+//2.多分支的预编译指令
+//     #if 常量表达式 
+//     #elif 常量表达式
+//     #else 常量表达式
+//     #endif
+// 类似于if else 语句
+
+//3.判读是否被定义 
+//     #if defined(symbol) 如果定义就会执行语句
+//     #ifdef symbol
+//     #endif
+//    
+//     #if !defined(symbol) 如果未定义就会执行语句
+//     #ifndef symbol
+//     #endif
+
+//4.嵌套指令
+//     #if defined(OS_UNIX)
+//            #ifdef OPTION 1
+//                    unix_version_option1();
+//            #endif 
+//            #ifdef OPTION 2
+//                    unix_version_option2();
+//            #endif 
+//     #elif defined(OS_MSDOS)
+//            #ifdef OPTION 2
+//                    unix_version_option2();
+//            #endif 
+//     #endif
+//
